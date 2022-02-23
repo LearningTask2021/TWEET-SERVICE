@@ -46,7 +46,7 @@ public class TweetsController
     	try {
     		
     		Users newUser=tweetsService.loginUser(userId,password);
-    		System.out.println(newUser);
+    		//System.out.println(newUser);
     		return new ResponseEntity<>(newUser, HttpStatus.CREATED);
         	}
         	catch(Exception e) {
