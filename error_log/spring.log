@@ -1,0 +1,92 @@
+2022-02-25 20:48:39.459  INFO 2776 --- [main] com.tweetApp.TweetApplication            : Starting TweetApplication using Java 1.8.0_311 on LTIN144099 with PID 2776 (C:\FSE1\TweetApp\TweetApp1\target\classes started by 918595 in C:\FSE1\TweetApp\TweetApp1)
+2022-02-25 20:48:39.464  INFO 2776 --- [main] com.tweetApp.TweetApplication            : No active profile set, falling back to default profiles: default
+2022-02-25 20:50:25.433  INFO 16224 --- [main] com.tweetApp.TweetApplication            : Starting TweetApplication using Java 1.8.0_311 on LTIN144099 with PID 16224 (C:\FSE1\TweetApp\TweetApp1\target\classes started by 918595 in C:\FSE1\TweetApp\TweetApp1)
+2022-02-25 20:50:25.437  INFO 16224 --- [main] com.tweetApp.TweetApplication            : No active profile set, falling back to default profiles: default
+2022-02-25 20:50:27.979  INFO 16224 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-25 20:50:27.979  INFO 16224 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2022-02-25 20:50:28.113  INFO 16224 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-02-25 20:50:28.646  INFO 16224 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[democluster-shard-00-00.mdzr6.mongodb.net:27017, democluster-shard-00-01.mdzr6.mongodb.net:27017, democluster-shard-00-02.mdzr6.mongodb.net:27017], mode=MULTIPLE, requiredClusterType=REPLICA_SET, serverSelectionTimeout='30000 ms', requiredReplicaSetName='atlas-y8z0k7-shard-0'}
+2022-02-25 20:50:28.647  INFO 16224 --- [main] org.mongodb.driver.cluster               : Adding discovered server democluster-shard-00-00.mdzr6.mongodb.net:27017 to client view of cluster
+2022-02-25 20:50:28.799  INFO 16224 --- [main] org.mongodb.driver.cluster               : Adding discovered server democluster-shard-00-01.mdzr6.mongodb.net:27017 to client view of cluster
+2022-02-25 20:50:28.801  INFO 16224 --- [main] org.mongodb.driver.cluster               : Adding discovered server democluster-shard-00-02.mdzr6.mongodb.net:27017 to client view of cluster
+2022-02-25 20:50:30.554  INFO 16224 --- [cluster-rtt-ClusterId{value='6218f3bcee029f7b444d8bde', description='null'}-democluster-shard-00-02.mdzr6.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:5, serverValue:17304}] to democluster-shard-00-02.mdzr6.mongodb.net:27017
+2022-02-25 20:50:30.554  INFO 16224 --- [cluster-rtt-ClusterId{value='6218f3bcee029f7b444d8bde', description='null'}-democluster-shard-00-01.mdzr6.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:19321}] to democluster-shard-00-01.mdzr6.mongodb.net:27017
+2022-02-25 20:50:30.555  INFO 16224 --- [cluster-ClusterId{value='6218f3bcee029f7b444d8bde', description='null'}-democluster-shard-00-00.mdzr6.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:6, serverValue:18026}] to democluster-shard-00-00.mdzr6.mongodb.net:27017
+2022-02-25 20:50:30.555  INFO 16224 --- [cluster-rtt-ClusterId{value='6218f3bcee029f7b444d8bde', description='null'}-democluster-shard-00-00.mdzr6.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:18026}] to democluster-shard-00-00.mdzr6.mongodb.net:27017
+2022-02-25 20:50:30.554  INFO 16224 --- [cluster-ClusterId{value='6218f3bcee029f7b444d8bde', description='null'}-democluster-shard-00-01.mdzr6.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:19323}] to democluster-shard-00-01.mdzr6.mongodb.net:27017
+2022-02-25 20:50:30.555  INFO 16224 --- [cluster-ClusterId{value='6218f3bcee029f7b444d8bde', description='null'}-democluster-shard-00-02.mdzr6.mongodb.net:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:4, serverValue:17304}] to democluster-shard-00-02.mdzr6.mongodb.net:27017
+2022-02-25 20:50:30.556  INFO 16224 --- [cluster-ClusterId{value='6218f3bcee029f7b444d8bde', description='null'}-democluster-shard-00-00.mdzr6.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=democluster-shard-00-00.mdzr6.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=582269500, setName='atlas-y8z0k7-shard-0', canonicalAddress=democluster-shard-00-00.mdzr6.mongodb.net:27017, hosts=[democluster-shard-00-00.mdzr6.mongodb.net:27017, democluster-shard-00-01.mdzr6.mongodb.net:27017, democluster-shard-00-02.mdzr6.mongodb.net:27017], passives=[], arbiters=[], primary='democluster-shard-00-01.mdzr6.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=7, topologyVersion=TopologyVersion{processId=62188b39e4d25b55b57dd92b, counter=4}, lastWriteDate=Fri Feb 25 20:50:30 IST 2022, lastUpdateTimeNanos=360262541372900}
+2022-02-25 20:50:30.556  INFO 16224 --- [cluster-ClusterId{value='6218f3bcee029f7b444d8bde', description='null'}-democluster-shard-00-01.mdzr6.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=democluster-shard-00-01.mdzr6.mongodb.net:27017, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=594865500, setName='atlas-y8z0k7-shard-0', canonicalAddress=democluster-shard-00-01.mdzr6.mongodb.net:27017, hosts=[democluster-shard-00-00.mdzr6.mongodb.net:27017, democluster-shard-00-01.mdzr6.mongodb.net:27017, democluster-shard-00-02.mdzr6.mongodb.net:27017], passives=[], arbiters=[], primary='democluster-shard-00-01.mdzr6.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff00000000000000b2, setVersion=7, topologyVersion=TopologyVersion{processId=62188c9a547d6ff139f5560e, counter=6}, lastWriteDate=Fri Feb 25 20:50:30 IST 2022, lastUpdateTimeNanos=360262541302100}
+2022-02-25 20:50:30.556  INFO 16224 --- [cluster-ClusterId{value='6218f3bcee029f7b444d8bde', description='null'}-democluster-shard-00-02.mdzr6.mongodb.net:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=democluster-shard-00-02.mdzr6.mongodb.net:27017, type=REPLICA_SET_SECONDARY, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=593753100, setName='atlas-y8z0k7-shard-0', canonicalAddress=democluster-shard-00-02.mdzr6.mongodb.net:27017, hosts=[democluster-shard-00-00.mdzr6.mongodb.net:27017, democluster-shard-00-01.mdzr6.mongodb.net:27017, democluster-shard-00-02.mdzr6.mongodb.net:27017], passives=[], arbiters=[], primary='democluster-shard-00-01.mdzr6.mongodb.net:27017', tagSet=TagSet{[Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=7, topologyVersion=TopologyVersion{processId=62188de8e41d9f95e80669aa, counter=3}, lastWriteDate=Fri Feb 25 20:50:30 IST 2022, lastUpdateTimeNanos=360262541290600}
+2022-02-25 20:50:30.560  INFO 16224 --- [cluster-ClusterId{value='6218f3bcee029f7b444d8bde', description='null'}-democluster-shard-00-01.mdzr6.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max election id to 7fffffff00000000000000b2 from replica set primary democluster-shard-00-01.mdzr6.mongodb.net:27017
+2022-02-25 20:50:30.560  INFO 16224 --- [cluster-ClusterId{value='6218f3bcee029f7b444d8bde', description='null'}-democluster-shard-00-01.mdzr6.mongodb.net:27017] org.mongodb.driver.cluster               : Setting max set version to 7 from replica set primary democluster-shard-00-01.mdzr6.mongodb.net:27017
+2022-02-25 20:50:30.561  INFO 16224 --- [cluster-ClusterId{value='6218f3bcee029f7b444d8bde', description='null'}-democluster-shard-00-01.mdzr6.mongodb.net:27017] org.mongodb.driver.cluster               : Discovered replica set primary democluster-shard-00-01.mdzr6.mongodb.net:27017
+2022-02-25 20:50:32.128  INFO 16224 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-02-25 20:50:32.129  INFO 16224 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2022-02-25 20:50:32.157  INFO 16224 --- [main] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2022-02-25 20:50:32.759  INFO 16224 --- [main] com.tweetApp.TweetApplication            : Started TweetApplication in 7.796 seconds (JVM running for 8.322)
+2022-02-25 20:50:53.386  INFO 16224 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-02-25 20:50:53.482  WARN 16224 --- [http-nio-8080-exec-2] wtTokenAuthorizationOncePerRequestFilter : JWT_TOKEN_EXPIRED
+
+io.jsonwebtoken.ExpiredJwtException: JWT expired at 2022-02-10T12:57:13Z. Current time: 2022-02-25T20:50:53Z, a difference of 1324420478 milliseconds.  Allowed clock skew: 0 milliseconds.
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:385) ~[jjwt-0.9.1.jar:0.9.1]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:481) ~[jjwt-0.9.1.jar:0.9.1]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parseClaimsJws(DefaultJwtParser.java:541) ~[jjwt-0.9.1.jar:0.9.1]
+	at com.tweetApp.jwtAuthentication.JwtTokenUtil.getAllClaimsFromToken(JwtTokenUtil.java:51) ~[classes/:na]
+	at com.tweetApp.jwtAuthentication.JwtTokenUtil.getClaimFromToken(JwtTokenUtil.java:46) ~[classes/:na]
+	at com.tweetApp.jwtAuthentication.JwtTokenUtil.getUsernameFromToken(JwtTokenUtil.java:34) ~[classes/:na]
+	at com.tweetApp.jwtAuthentication.JwtTokenAuthorizationOncePerRequestFilter.doFilterInternal(JwtTokenAuthorizationOncePerRequestFilter.java:50) ~[classes/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.8.jar:5.3.8]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.8.jar:5.3.8]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.8.jar:5.3.8]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183) [spring-security-web-5.5.0.jar:5.5.0]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) [spring-web-5.3.8.jar:5.3.8]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) [spring-web-5.3.8.jar:5.3.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.3.8.jar:5.3.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.8.jar:5.3.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.3.8.jar:5.3.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.8.jar:5.3.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96) [spring-boot-actuator-2.5.1.jar:2.5.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.8.jar:5.3.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.3.8.jar:5.3.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.8.jar:5.3.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_311]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_311]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.46.jar:9.0.46]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_311]
+

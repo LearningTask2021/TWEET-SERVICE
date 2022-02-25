@@ -3,24 +3,23 @@ package com.tweetApp.services;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.mongodb.MongoSocketOpenException;
 import com.tweetApp.model.Tweets;
 import com.tweetApp.model.Users;
 import com.tweetApp.repository.UsersRepository;
-
-import io.jsonwebtoken.lang.Collections;
 
 @Service
 public class TweetsService {
 	
 	@Autowired
 	private UsersRepository usersRepository;
+	 Logger logger = LoggerFactory.getLogger(TweetsService.class);
 	
 	public Users registerNewUser(Users user) throws Exception {
 		if(usersRepository.findById(user.getUserId()).isPresent()) {
@@ -28,7 +27,7 @@ public class TweetsService {
 		}
 		else {
 		Users newUser=usersRepository.save(user);
-		System.out.println(newUser);
+		logger.info(newUser.toString());
 		return newUser;
 		}
 		
@@ -37,7 +36,7 @@ public class TweetsService {
 	
 	public Users loginUser(String userId,String password) {
 		Users user=usersRepository.findByUserIdAndPassword(userId,password).get();
-		System.out.println(user);
+		logger.info(user.toString());
 		return user;
 	}
 	
@@ -116,19 +115,19 @@ public class TweetsService {
 	}
 	
 	public String deleteATweet(String userId,String tweetId) throws Exception{
-		System.out.println(userId);
-		System.out.println(tweetId);
+		logger.info(userId);
+		logger.info(tweetId);
 		Optional<Users> u=usersRepository.findByUserId(userId);
 		Optional<Users> tweetedUser=usersRepository.findByTweetsTweetId(tweetId);
-		System.out.println(tweetedUser.get().getUserId());
+		logger.info(tweetedUser.get().getUserId());
 		if(tweetedUser.isPresent()) {
-			System.out.println("got user with give nu serid");
+			logger.info("got user with give nu serid");
 			if(tweetedUser.get().getUserId().equals(userId)) {
-				System.out.println("userid matched with tweeted persons userid");
+				logger.info("userid matched with tweeted persons userid");
 			Users user=u.get();
 			List<Tweets> tweets=user.getTweets();
 			List<Tweets> updated=tweets.stream().filter(t->!(t.getTweetId().equals(tweetId))).collect(Collectors.toList());
-			updated.forEach(t->System.out.println(t.getTweetId()));
+			updated.forEach(t->logger.debug(t.getTweetId()));
 			user.setTweets(updated);
 			Users updatedUser=usersRepository.save(user);
 			return "Tweet deleted succcessfully!";
@@ -149,7 +148,7 @@ public class TweetsService {
 			if(reply.getTweetText().length()>144) {
 				throw new Exception("Tweet cannot exceed 144 characters.");
 			}
-		System.out.println("Inside tweets method!");
+		logger.debug("Inside tweets method!");
 		reply.setParentTweetId(parentTweetId);
      	Users user=usersRepository.findByUserId(userId).get();
      	List<Tweets> tweets=user.getTweets();
@@ -157,16 +156,16 @@ public class TweetsService {
      	Optional<Users> u1=usersRepository.findByTweetsTweetId(parentTweetId);
      	if(u1.isPresent()) {
      		Users user1=u1.get();
-     	System.out.println(user1);
+     	logger.debug(user1.toString());
      	List<Tweets> tweets1=user1.getTweets();
      	tweets1.forEach(t->{
      	if(t.getTweetId().contentEquals(parentTweetId)) {
      		reply.setTweetText("@"+userId+":-"+reply.getTweetText().toString());
-     		System.out.println(reply.getTweetText());
+     		logger.debug(reply.getTweetText());
      		t.getReplies().add(reply);
      	}
      	});
-     	System.out.println(tweets1);
+     	logger.debug(tweets1.toString());
      	user1.setTweets(tweets1);
      	usersRepository.save(user1);
      	Users updatedUser=usersRepository.save(user);
@@ -211,7 +210,7 @@ public class TweetsService {
 		//tweets.removeIf(t -> t.getTweetId().equals(tweetId);
 		for (int i = 0; i < tweets.size(); i++) {
 					if(tweets.get(i).getTweetId().equals(tweetId)) {
-						System.out.println("Inside updating tweeet");
+						logger.info("Inside updating tweeet");
 						tweets.remove(tweets.get(i));
 						tweets.add(tweet);
 					}
@@ -232,7 +231,7 @@ public class TweetsService {
 		tweets.forEach(t->{
 			if(t.getTweetId().contentEquals(tweetId)) {
 				t.setLikes(t.getLikes()+1);
-				System.out.println(t.getLikes());
+				//logger.debug(t.getLikes());
 			}
 		});
 		}

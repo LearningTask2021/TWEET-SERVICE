@@ -1,4 +1,6 @@
 package com.tweetApp.Controller;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,7 +23,7 @@ public class TweetsController
 {
     @Autowired
     TweetsService tweetsService;
-    
+    Logger logger = LoggerFactory.getLogger(TweetsService.class);
     
     
     //Register a user
@@ -34,7 +36,7 @@ public class TweetsController
 		return new ResponseEntity<>(msg, HttpStatus.OK);
     	}
     	catch(Exception e) {
-    		System.out.println(e.getMessage());
+    		logger.error(e.getMessage());
             return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
     	}
  
@@ -61,7 +63,7 @@ public class TweetsController
 try {
     		
     		Users newUser=tweetsService.resetPassword(userId,password);
-    		System.out.println(newUser);
+    		logger.debug(newUser.toString());
     		return new ResponseEntity<>(newUser, HttpStatus.CREATED);
         	}
         	catch(Exception e) {
@@ -143,7 +145,7 @@ try {
          }
          catch (Exception e)
          {
-        	 System.out.println(e.getMessage());
+        	 logger.error(e.getMessage());
              return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
          }
     }
@@ -159,7 +161,7 @@ try {
         }
         catch (Exception e)
         {
-        	System.out.println(e);
+        	logger.error(e.getMessage());
             return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
@@ -175,7 +177,7 @@ try {
 	}
 	catch (Exception e)
 	{
-		System.out.println(e);
+		logger.error(e.getMessage());
 	    return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
 	}
     }
@@ -190,7 +192,7 @@ try {
          }
          catch (Exception e)
          {
-         	System.out.println(e);
+         	logger.info(e.getMessage());
              return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
          }
     }
@@ -205,7 +207,7 @@ try {
     	}
     	catch (Exception e)
     	{
-    		System.out.println(e);
+    		logger.info(e.getMessage());
     	    return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
     	}
     }
@@ -221,7 +223,7 @@ try {
     	}
     	catch (Exception e)
     	{
-    		System.out.println(e);
+    		logger.info(e.getMessage());
     	    return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
     	}
     }
