@@ -1,4 +1,5 @@
 package com.tweetApp.Controller;
+import org.apache.kafka.clients.producer.KafkaProducer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.tweetApp.jwtAuthentication.JwtTokenResponse;
+import com.tweetApp.kafka.kafkaProducer;
 import com.tweetApp.model.Tweets;
 import com.tweetApp.model.Users;
 import com.tweetApp.repository.UsersRepository;
@@ -16,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api/v1.0/tweets")
@@ -24,14 +27,25 @@ public class TweetsController
     @Autowired
     TweetsService tweetsService;
     Logger logger = LoggerFactory.getLogger(TweetsService.class);
+    private final kafkaProducer producer;
     
+    @Autowired
+    TweetsController(kafkaProducer producer) {
+        this.producer = producer;
+    }
+
+   @PostMapping(value = "/publish")
+    public void sendMessageToKafkaTopic(@RequestParam("message") String message) {
+        this.producer.sendMessage(message);
+    }
     
     //Register a user
     @PostMapping("/register")
     public ResponseEntity registerUser(@RequestBody Users user){
     	try {
     		
-		Users newUser=tweetsService.registerNewUser(user);
+		//Users newUser=tweetsService.registerNewUser(user);
+    		this.producer.registerKafkaProducer(user);
 		String msg="Registered succesfully!";
 		return new ResponseEntity<>(msg, HttpStatus.OK);
     	}
