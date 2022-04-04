@@ -5,8 +5,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.kafka.KafkaException;
 import org.springframework.web.bind.annotation.*;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.tweetApp.jwtAuthentication.JwtTokenResponse;
 import com.tweetApp.kafka.kafkaProducer;
 import com.tweetApp.model.Tweets;
@@ -45,11 +47,11 @@ public class TweetsController
     	try {
     		
 		//Users newUser=tweetsService.registerNewUser(user);
-    		this.producer.registerKafkaProducer(user);
+    	this.producer.registerKafkaProducer(user);
 		String msg="Registered succesfully!";
 		return new ResponseEntity<>(msg, HttpStatus.OK);
     	}
-    	catch(Exception e) {
+    	catch(KafkaException | JsonProcessingException e) {
     		logger.error(e.getMessage());
             return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
     	}

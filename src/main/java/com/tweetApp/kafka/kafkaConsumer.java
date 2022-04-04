@@ -34,8 +34,23 @@ public class kafkaConsumer {
 	    	logger.info("inside consumer for registering user");
 			Users user = this.mapper.readValue(message, Users.class);
 			logger.info(user.toString());
-			 this.repo.save(user);
-			logger.info("user saved successfully!");
+			try {
+			if(repo.findById(user.getUserId()).isPresent()) {
+				logger.info("user already exists");
+				throw new Exception("UserID already exists");
+				}
+				else {
+				Users newUser=repo.save(user);
+				logger.info(newUser.toString());
+				//return newUser;
+				}
+			}
+			catch(Exception e) {
+				logger.info(e.getMessage());
+				throw e;
+			}
+			// this.repo.save(user);
+			//logger.info("user saved successfully!");
 			//logger.info("User added{}", userSaved);
 		}
 

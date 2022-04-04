@@ -35,7 +35,7 @@ public class JWTWebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Value("${jwt.get.token.uri}")
 	private String authenticationPath;
 
-	@Autowired
+	//@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(jwtInMemoryUserDetailsService).passwordEncoder(passwordEncoderBean());
 	}
@@ -58,7 +58,7 @@ public class JWTWebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.authenticationEntryPoint(jwtUnAuthorizedResponseAuthenticationEntryPoint)
 				.and().sessionManagement()
 				.sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
-				.authorizeRequests().antMatchers("/v2/api-docs", "/swagger-resources/**", "/swagger-ui/**").permitAll()
+				.authorizeRequests().antMatchers("/v2/api-docs", "/swagger-resources/**", "/swagger-ui/**","/api/v1.0/tweets/register").permitAll()
 				//.authorizeRequests()
 				//.anyRequest()
 				.antMatchers("/api/**").authenticated();
